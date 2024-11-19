@@ -7,6 +7,9 @@ const port = process.env.PORT || 3000;
 app.use(json());
 app.use(CorsMiddelware());
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 app.use("/movies", movieRouter);
 
 app.listen(3000, () => {
